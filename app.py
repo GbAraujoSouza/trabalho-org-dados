@@ -93,7 +93,6 @@ with tab2:
     st.write('Nesta seção, realizamos a verificação e o tratamento do dataset para garantir que ele esteja limpo e realizamos a sua visualização.')
     resumo = resume_dado(df)
     st.header("Resumo do Dataset:")
-    
 
     for key, value in resumo.items():
         if key == "Valores Faltantes":
@@ -104,6 +103,9 @@ with tab2:
             })
             st.write(f"- **{key}**")
             st.table(missing_df)  
+        elif key == "Descrição":
+            st.write("Descrição estatística do dataset")
+            st.table(pd.DataFrame(value))     
         else:
             st.write(f"- **{key}**: {value}")
     st.write(" O conjunto de dados contém informações sobre 81 jogadores profissionais de League of Legends (LoL), sem linhas duplicadas ou valores faltantes. Considerando que cada time no LoL é composto por 5 jogadores, o dataset abrange 16 times, com exceção de um time que inclui um jogador reserva.")

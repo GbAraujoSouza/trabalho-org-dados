@@ -10,11 +10,13 @@ def carregar_dataset():
 
 def resume_dado(df):
     
-    resumo_dataframe = {"Dataset Shape": df.shape,
-    "Linhas Duplicadas" : True in df.duplicated(),
-    "Valores Faltantes" : df.isna().any()
-    
+    resumo_dataframe = {
+        "Descrição": df.describe(),
+        "Dataset Shape": df.shape,
+        "Linhas Duplicadas": True in df.duplicated(),
+        "Valores Faltantes": df.isna().any(),
     }
+
     return resumo_dataframe
 
 
