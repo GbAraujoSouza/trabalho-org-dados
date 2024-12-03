@@ -25,7 +25,7 @@ tab1, tab2, tab3 = st.tabs([
     
     
 with tab1:
-    st.header("Comparação de Campeões")
+    st.header("Comparação de Jogadores")
     col1, col2 = st.columns(2)
     
     with col1:
@@ -44,7 +44,7 @@ with tab1:
             key="player2"
         )
     
-    if st.button("Comparar Campeões"):
+    if st.button("Comparar Jogadores"):
         
         p1_data, p2_data = compara_jogadores(df, player1, player2)
         
@@ -58,7 +58,7 @@ with tab1:
             st.markdown('<div style="text-align: center"><h3>%s</h3> </div>'%player2,True)
             st.dataframe(p2_data, width = 400)
 
-    st.markdown("""<h2 class="func_title">Comparação de Jogadores</h2>""",unsafe_allow_html=True)
+    st.markdown("""<h2 class="func_title">Comparação de Times</h2>""",unsafe_allow_html=True)
     col1_1, col1_2 = st.columns(2)
     
     with col1_1:
